@@ -40,18 +40,27 @@ module.exports = (grunt) ->
         tasks: ['bower']
       coffee:
         files: ['src/**/*.coffee']
-        tasks: ['coffee']
+        tasks: ['scripts']
       pug:
         files: ['page/**/*.pug']
         tasks: ['pug']
       less:
         files: ['style/**/*.less']
         tasks: ['style']
+    copy:
+      scripts:
+        files: [
+          expand: true
+          src: ['src/**/*.coffee']
+          dest: 'www/'
+        ]
 
   grunt.loadNpmTasks 'grunt-bower-task'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-pug'
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks 'grunt-contrib-copy'
 
-  grunt.registerTask 'default', ['bower', 'coffee', 'pug', 'less']
+  grunt.registerTask 'scripts', ['coffee:compile', 'copy:scripts']
+  grunt.registerTask 'default', ['bower', 'scripts', 'pug', 'less']
