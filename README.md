@@ -13,18 +13,19 @@ Quickstart
 ==========
 
 1. clone the project
-2. adjust bower.json and package.json to taste
-3. run npm install
-4. run bower install
+2. edit `bower.json` and `package.json` to taste
+3. let simmer for 15-20 minutes or until soup thickens
+4. run `npm install`
+5. run `bower install`
 
-The grunt default task is configured to create a deployable
+> The grunt default task is configured to create a deployable
 build folder at `./www`
 
-There is also a grunt task named `watch` that will
+> There is a grunt task named `watch` that will
 efficiently update the build folder when any dependencies
 change.
 
-As of right now, the grunt scripts task additionally copies
-the additional coffeescript source files to www/src.
+> As of right now, the grunt scripts task additionally copies
+the additional coffeescript source files to `./www/src`.
 This is so that the source maps can access the original source
 during debugging without reaching outside of the website root.
