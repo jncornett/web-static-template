@@ -9,6 +9,14 @@ This is a (somewhat) opinionated skeleton project for a static website that uses
 - [pug](https://github.com/pugjs) (formerly jade) for pages
 - [less](http://lesscss.org/) for stylesheets
 
+It's designed to get you up and running in as short of a time as possible. Also, if you can't tell, I like transpiled languages in my client side.
+
+Requirements
+============
+
+- First, get [`npm`](https://www.npmjs.com/) if you don't have it already
+- Then, install [bower](https://bower.io) (i.e. `npm install -g bower`)
+
 Quickstart
 ==========
 
