@@ -26,6 +26,17 @@ Quickstart
 4. run `npm install`
 5. run `bower install`
 
+Layout/Structure
+================
+
+Here are the grunt compilation mappings:
+
+- Pug(Jade) pages in `./page` -> HTML files in `./www`
+- Coffeescript sources in `./src` -> JavaScript files in `./www/app`
+- Less stylesheets in `./style` -> CSS files in `./www/css`
+
+> The script `./src/config.coffee` configures `requirejs` so that source files in `./src` are available via `app/<name>` and source files from bower are available via `<project-folder>/<base-name>` (thus `bower_components/backbone/backbone.js` is accessed by requiring `backbone/backbone`)
+
 > The grunt default task is configured to create a deployable
 build folder at `./www`
 
@@ -37,3 +48,9 @@ change.
 the additional coffeescript source files to `./www/src`.
 This is so that the source maps can access the original source
 during debugging without reaching outside of the website root.
+
+To Do
+=====
+
+- Update `Gruntfile.coffee` to allow for non-transpiled sources to be installed. This means that I can place plain JavaScript files in `./src` instead of just Coffeescript files. (and the same for CSS files in `./style` and HTML files in `./page`)
+- Make the mappings more intuitive. `./src` -> `./www/app` violates Least Surprise, for example.
